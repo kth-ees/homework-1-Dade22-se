@@ -9,6 +9,16 @@ module decoder_tb;
     .binary(binary),
     .one_hot(one_hot)
   );
+  initial begin
+    // Initialize the input
+    binary = 4'b0000;
+    #10;
 
-  // Complete your testbench here
+    // Loop through all 16 possible values for the 4-bit input
+    for (int i = 0; i < 16; i++) begin
+      binary = i;
+      #10; // Apply each input value for 10ns
+    end
+
+    $finish;
 endmodule
