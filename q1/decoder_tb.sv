@@ -21,4 +21,5 @@ module decoder_tb;
     end
 
     $finish;
+  end
 endmodule
